@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: order-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 81.68.234.212:8848
+  redis:
+    host: 81.68.234.212
+    port: 6379
+    database: 0
+    timeout: 1800000
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+server:
+  port: 5321

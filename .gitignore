@@ -1,0 +1,3 @@
+# Project exclude paths
+/security-oauth2-order/target/
+/security-oauth2-uaa/target/

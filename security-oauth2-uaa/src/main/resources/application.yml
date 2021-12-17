@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: uaa-service
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver              # mysql驱动包
+    url: jdbc:mysql://81.68.234.212:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 81.68.234.212:8848
+  redis:
+    host: 81.68.234.212
+    port: 6379
+    database: 0
+    timeout: 1800000
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+
+server:
+  port: 5320
+
+system:
+  #客户端配置
+  client:
+    clients[0]:
+      clientId: oauth
+      clientSecret: oauth
+mybatis-plus:
+  mapper-locations: classpath:com/zr/security/oauth2/uaa/mapper/xml/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
